@@ -17,3 +17,7 @@ Our dataset currently includes information such as age, sex, cabin location, and
 Once we have developed our model, our team intends to create a webpage where users can enter their own information and find out what their liklihood of survival would be based on their demographics and the tickets they purchase.
 
 We are also planning on databasing entries for people who add entries to the site, to see what the survival rate is for hypothetical additional passengers today!
+
+## Project: 
+<h3>Architectural Diagram</h3>
+<img src = "/images/TitanicFloatsArchitecture.png" width = "500" height = "250">
