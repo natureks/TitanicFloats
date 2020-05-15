@@ -12,6 +12,8 @@ https://github.com/natureks/TitanicFloats
 
 For our project, out team is planning on utilizing data on the passengers of the Titanic. We will use the skills we have learned to help develop a model which predicts the liklihood of survival for passengers based on some of their personal information.
 
-Our dataset currently includes information such as age, sex, cabin location, fare (price paid for ticket). We intend to explore the relationship among these variables and the survival rate of the passengers.
+Our dataset currently includes information such as age, sex, cabin location, and fare (price paid for ticket). We intend to explore the relationship among these variables and the survival rate of the passengers.
 
 Once we have developed our model, our team intends to create a webpage where users can enter their own information and find out what their liklihood of survival would be based on their demographics and the tickets they purchase.
+
+We are also planning on databasing entries for people who add entries to the site, to see what the survival rate is for hypothetical additional passengers today!
