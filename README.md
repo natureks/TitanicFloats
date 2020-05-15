@@ -7,8 +7,12 @@ Kannan | natureks | Sekkappan
 Georgia | geleigh | Leigh
 Ethan | ethanemartin95 | Martin
 Shane| hobbyhack | Gary
+
 Url of Github Repo of your Project:
 https://github.com/natureks/TitanicFloats
+
+Our website for visualization is:
+http://titanic-floats-the-ml-kings.s3-website-us-east-1.amazonaws.com/
 
 For our project, out team is planning on utilizing data on the passengers of the Titanic. We will use the skills we have learned to help develop a model which predicts the liklihood of survival for passengers based on some of their personal information.
 
