@@ -14,6 +14,9 @@ https://github.com/natureks/TitanicFloats
 Our website for visualization is:
 http://titanic-floats-the-ml-kings.s3-website-us-east-1.amazonaws.com/
 
+Our API Server is:
+https://young-beach-08773.herokuapp.com/
+
 For our project, out team is planning on utilizing data on the passengers of the Titanic. We will use the skills we have learned to help develop a model which predicts the liklihood of survival for passengers based on some of their personal information.
 
 Our dataset currently includes information such as age, sex, cabin location, and fare (price paid for ticket). We intend to explore the relationship among these variables and the survival rate of the passengers.
