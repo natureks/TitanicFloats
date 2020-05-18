@@ -15,31 +15,165 @@
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
   <div class="container">
     <div class='jumbotron'>
-      The Titanic Floats - Kings of Machine Learning
+      <h1>The Titanic Floats - Kings of Machine Learning</h1>
     </div>
-    <div class= "row">
-      <div class="col-md-12">
-        <div id ='ticket'>
-          <div id='ticket-header'>
-            <ul>
-              <li>TIcket #: </li>
-              <li id='ticket-title'>WHITE STAR LINE</li>
-              <li>Class: </li>
-            </ul>
+
+    <h2>Buy a Ticket</h2>
+    <div class="row">
+      <form class="form-horizontal" action="">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="control-label col-md-4" for="title">Title:</label>
+            <div class="col-md-8">
+              <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
+            </div>
           </div>
-
+          <div class="form-group">
+            <label class="control-label col-md-4" for="first_name">First Name:</label>
+            <div class="col-md-8">          
+              <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" name="first_name">
+            </div>
+          </div>
+          <div class="form-group">        
+            <label class="control-label col-md-4" for="first_name">Last Name:</label>
+            <div class="col-md-8">          
+              <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name" name="last_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4" for="gender">Gender:</label>
+            <div class="col-md-8">
+              <select class="form-control" id="gender">
+                <option value="" selected disabled>Please select</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">        
+            <label class="control-label col-md-4" for="age">Age:</label>
+            <div class="col-md-8">          
+              <input type="number" class="form-control" id="age" placeholder="Age" name="age">
+            </div>
+          </div>  
         </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="control-label col-md-4" for="ticket_class">Class:</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="ticket_class" placeholder="Enter Ticket Class" name="ticket_class">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4" for="cabin">Cabin:</label>
+            <div class="col-md-8">          
+              <input type="text" class="form-control" id="cabin" placeholder="Enter Cabin" name="cabin">
+            </div>
+          </div>
+          <div class="form-group">        
+            <label class="control-label col-md-4" for="sib_sp">Siblings/Spouces:</label>
+            <div class="col-md-8">          
+              <input type="number" class="form-control" id="sib_sp" placeholder="Count" name="sib_sp">
+            </div>
+          </div>  
+          <div class="form-group">        
+            <label class="control-label col-md-4" for="par_ch">Parents/Children:</label>
+            <div class="col-md-8">          
+              <input type="number" class="form-control" id="par_ch" placeholder="Count" name="par_ch">
+            </div>
+          </div> 
+          <div class="form-group">
+            <label class="control-label col-md-4" for="gender">Depart From:</label>
+            <div class="col-md-8">
+              <select class="form-control" id="gender">
+                <option value="" selected disabled>Please select</option>
+                <option>Cherbourg</option>
+                <option>Queenstown</option>
+                <option>Southhampton</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">        
+            <div class="col-md-offset-2 col-md-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">Fare</div>
+                <div class="panel-body">PRICE</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-md-offset-2 col-md-10">
+              <button type="submit" class="btn btn-default">Buy Ticket</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 
+    <div class= "row ticket">
+      <div class="col-4">
+        <div class="row" id="ticket_number">Ticket #: PLACE HOLDER</div>
+        <div class="row" id="ticket_full_name">Name: PLACE HOLDER</div> 
+        <div class="row">
+          <div class="col-6" id="ticket_age">Gender: PLACE HOLDER</div>
+          <div class="col-6" id="ticket_gender">Age: PLACE HOLDER</div>
+        </div>
+        <div class="row" id="ticket_depart_from"> Depart: PLACEHOLDER</div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <h3>WHITE STAR LINE</h3>
+        </div>
+        <div class="row titantic_logo">
+          <img src="../images/titaniccrop.png" alt="Titanic Logo">
+        </div>
+        <div class="row">
+          <h4>TITANIC</h4>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row" id="ticket_class">Class: PLACE HOLDER</div>
+        <div class="row" id="ticket_cabin">Cabin: PLACE HOLDER</div>
+        <div class="row" id="ticket_fare">Fare: PLACE HOLDER</div>
+        <div class="row" id="ticket_arrive_to">Arrive: NYC</div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-4 my-auto" id="survivalbility">
+        <h2>PLACE HOLDER</h2>
+      </div>
+      <div class="col-2 col-offset-10">
+        <div class="row">
+          <button type="submit" class="btn btn-default" id="add_new_passenger">Add New Passenger</button>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-default" id="view_captains_log">View Captains Log</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 <script src="js/scripts.js"></script>
 </html>
+

@@ -3,7 +3,26 @@
     height: 200px;
 }
 
-#ticket {
-  background-image: url('../images/ticket-paper.jpg');
+.ticket {
+  background-image: url('../images/old_paper.jpg');
+  border-radius: 35px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+#survivalbility {
+  border-radius: 35px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+#ticket-header li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+
+#ticket-title {
+
 }
 
