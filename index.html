@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 
 </head>
 
@@ -36,7 +37,13 @@
           <div class="form-group">
             <label class="control-label col-md-4" for="title">Title:</label>
             <div class="col-md-8">
-              <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
+              <select class="form-control" id="title">
+                <option value="" selected disabled>Please select</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Master</option>
+                <option>Miss</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
@@ -70,15 +77,29 @@
         </div>
         <div class="col-md-4">
           <div class="form-group">
-            <label class="control-label col-md-4" for="ticket_class">Class:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="ticket_class" placeholder="Enter Ticket Class" name="ticket_class">
+            <label class="control-label col-md-4" for="class_form">Class:</label>
+            <div class="col-md-8">
+              <select class="form-control" id="class_form">
+                <option value="" selected disabled>Please select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-4" for="cabin">Cabin:</label>
-            <div class="col-md-8">          
-              <input type="text" class="form-control" id="cabin" placeholder="Enter Cabin" name="cabin">
+            <div class="col-md-8">
+              <select class="form-control" id="cabin">
+                <option value="" selected disabled>Please select</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+                <option>E</option>
+                <option>No Preference</option>
+                <option>Z</option>
+              </select>
             </div>
           </div>
           <div class="form-group">        
@@ -94,9 +115,9 @@
             </div>
           </div> 
           <div class="form-group">
-            <label class="control-label col-md-4" for="gender">Depart From:</label>
+            <label class="control-label col-md-4" for="depart_from">Depart From:</label>
             <div class="col-md-8">
-              <select class="form-control" id="gender">
+              <select class="form-control" id="depart_from">
                 <option value="" selected disabled>Please select</option>
                 <option>Cherbourg</option>
                 <option>Queenstown</option>
@@ -108,20 +129,20 @@
         <div class="col-md-4">
           <div class="form-group">        
             <div class="col-md-offset-2 col-md-10">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
             </div>
           </div>
           <div class="form-group">
             <div class="col-md-offset-2 col-md-6">
               <div class="panel panel-default">
                 <div class="panel-heading">Fare</div>
-                <div class="panel-body">PRICE</div>
+                <div class="panel-body" id="input_fare">PRICE</div>
               </div>
             </div>
           </div>
           <div class="form-group">        
             <div class="col-md-offset-2 col-md-10">
-              <button type="submit" class="btn btn-default">Buy Ticket</button>
+              <button type="submit" class="btn btn-default" id="buy_ticket">Buy Ticket</button>
             </div>
           </div>
         </div>
@@ -143,7 +164,7 @@
           <h3>WHITE STAR LINE</h3>
         </div>
         <div class="row titantic_logo">
-          <img src="../images/titaniccrop.png" alt="Titanic Logo">
+          <img src="images/titanic_transparent_logo.png" alt="Titanic Logo">
         </div>
         <div class="row">
           <h4>TITANIC</h4>
@@ -159,7 +180,7 @@
 
     <div class="row">
       <div class="col-4 my-auto" id="survivalbility">
-        <h2>PLACE HOLDER</h2>
+        <h2>SURVIVABILITY</h2>
       </div>
       <div class="col-2 col-offset-10">
         <div class="row">
