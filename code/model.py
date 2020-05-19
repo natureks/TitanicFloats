@@ -67,7 +67,9 @@ def generate_ticket_data(ticket):
     else:
         sex = 1
 
-    fare = ticket['fare']/2500
+    # Can be updated for inflations
+    # currently passes it in titanic day values
+    fare = ticket['fare']/1
 
     ticket_list = [
         ticket['ticket_class'], 
