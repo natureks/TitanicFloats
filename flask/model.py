@@ -195,7 +195,7 @@ def generate_ticket_data(ticket):
 
     return(np.array(ticket_list).reshape(1, -1))
 
-def predict_results(model_file, ticket_data, ticket_num):
+def predict_results(model_file, ticket_data):
     """
     This function runs the ticket against the model
     and predicts survivability and probability of
@@ -221,6 +221,6 @@ if __name__ == "__main__":
     }
     
     ticket_data = generate_ticket_data(ticket)
-    result = predict_results(model_file='clf_rfp.model', ticket_data=ticket_data, ticket_num =1)
+    result = predict_results(model_file='clf_rfp.model', ticket_data=ticket_data)
     print(result)
     

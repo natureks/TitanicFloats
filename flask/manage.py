@@ -53,11 +53,12 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
 
     # ticket_data = model.generate_ticket_data(ticket)
     # result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data, ticket_num='1')
-    result = [1, .57, 1]
+    result = [1, .57]
+    result.append('1')
     return jsonify(result)
 
 
-def predict_results(model_file, ticket_data, ticket_num):
+def predict_results(model_file, ticket_data):
     """
     This function runs the ticket against the model
     and predicts survivability and probability of
@@ -66,7 +67,7 @@ def predict_results(model_file, ticket_data, ticket_num):
     model = pickle.load(open(model_file, "rb"))
     predicted = model.predict(ticket_data)
     prob = model.predict_proba(ticket_data).max().round(2)
-    return([predicted[0], prob], ticket_num)
+    return([predicted[0], prob])
 
 
 if __name__ == '__main__':
