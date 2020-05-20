@@ -204,8 +204,7 @@ def predict_results(model_file, ticket_data):
     model = pickle.load(open(model_file, "rb"))
     predicted = model.predict(ticket_data)
     prob = model.predict_proba(ticket_data).max().round(2)
-    return([predicted[0], prob, ticket_num])
-
+    return([predicted[0], prob])
 
 if __name__ == "__main__":
 
@@ -221,6 +220,6 @@ if __name__ == "__main__":
     }
     
     ticket_data = generate_ticket_data(ticket)
-    result = predict_results(model_file='clf_rfp.model', ticket_data=ticket_data)
+    result = predict_results(model_file='../code/clf_rfp.model', ticket_data=ticket_data)
     print(result)
     
