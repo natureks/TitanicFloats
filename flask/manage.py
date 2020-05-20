@@ -29,31 +29,33 @@ def redirect():
 def render_template_html(page_name):
     return render_template('%s.html' % page_name)
 
-# @app.route('/api/dummy')
-# def dummy():
-#     return jsonify("dummytest")
+passenger = {1:("Mr","John","Smith","3","m","1","1","8","20","C","Z"), 2:("Mr","Todd","Rod","3","m","1","1","8","30","C","Z")}
+
+
+@app.route('/api/get_passengers')
+def get_passengers():
+    return jsonify(passenger)
 
 
 @app.route('/api/add_passenger/<title>/<fname>/<lname>/<ticket_class>/<sex>/<siblings_spouse>/<parents_children>/<fare>/<age>/<port>/<cabin>', methods=['GET', 'POST'])
 def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin):
 
-    ticket = {
-        'ticket_class' : title,
-        'sex' : sex,
-        'siblings_spouse' : int(siblings_spouse), # of siblings / spouses aboard the Titanic
-        'parents_children' : int(parents_children), # - int - # of parents / children aboard the Titanic
-        'fare' : int(fare), # - int - Passenger fare input in USD range $
-        'age' : int(age),
-        'port' : port,   # C = Cherbourg, Q = Queenstown, S = Southampton
-        'cabin' : cabin
-    }
+    # ticket = {
+    #     'ticket_class' : title,
+    #     'sex' : sex,
+    #     'siblings_spouse' : int(siblings_spouse), # of siblings / spouses aboard the Titanic
+    #     'parents_children' : int(parents_children), # - int - # of parents / children aboard the Titanic
+    #     'fare' : int(fare), # - int - Passenger fare input in USD range $
+    #     'age' : int(age),
+    #     'port' : port,   # C = Cherbourg, Q = Queenstown, S = Southampton
+    #     'cabin' : cabin
+    # }
 
-    ticket_data = model.generate_ticket_data(ticket)
-    result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data, ticket_num='1')
-
+    # ticket_data = model.generate_ticket_data(ticket)
+    # result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data, ticket_num='1')
+    result = [1, .57, 1]
     return jsonify(result)
 
-    # return jsonify("test")
 
 def predict_results(model_file, ticket_data, ticket_num):
     """

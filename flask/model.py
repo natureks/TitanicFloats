@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 import pickle
 
+
 # def assign_cabin(cabin):
 #     """
 #     Function to create cabin levels based on first ltter of cabin
