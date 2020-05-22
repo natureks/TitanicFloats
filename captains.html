@@ -6,20 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>The Capitain's Log - The Titanic Floats</title>
-  <style>
-    body {
-       background-image: url('images/teapaper.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
- </style>
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <style>
+  body {
+    background-image: url('images/teapaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+ </style>
+ <script>
+     var url baseurl = "https://young-beach-08773.herokuapp.com/api/get_passengers"
+ </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container text-center">
-      <h1>The Capitan's Log <small> the titanic floats</small></h1>
+      <h1>The Capitan's Log</h1>
       <h1> <small> The Titanic Floats </small> </h1>
       <p> A log of all the passengers to ever attempt our voyage on the Titanic</p>
       <div>
@@ -42,7 +45,7 @@
 
 </html>
 
-<table class="table">
+<table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col">Ticket #</th>

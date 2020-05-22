@@ -22,7 +22,10 @@
   padding: 20px;
 }
 
-#ticket-title {
-
-}
+.body {
+  background-image: url('images/teapaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+ 
 
