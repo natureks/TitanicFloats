@@ -1,13 +1,16 @@
 # TitanicFloats
 Machine Learning For Titanic Voyage
 
-Kevin | balhoffk | Balhoff
-Jackie | JKx2020 | Kamprath
-Kannan | natureks | Sekkappan
-Georgia | geleigh | Leigh
-Ethan | ethanemartin95 | Martin
-Shane| hobbyhack | Gary
-
+| First Name | Git-Username   | Last Name |
+|------------|----------------|-----------|
+| Kevin      | balhoffk       | Balhoff   |
+| Jackie     | JKx2020        | Kamprath  |
+| Kannan     | natureks       | Sekkappan |
+| Georgia    | geleigh        | Leigh     |
+| Ethan      | ethanemartin95 | Martin    |
+| Shane      | hobbyhack      | Gary      |
+  
+  
 Url of Github Repo of your Project:
 https://github.com/natureks/TitanicFloats
 
