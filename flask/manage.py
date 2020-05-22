@@ -4,7 +4,6 @@ from flask import Flask, redirect, jsonify, render_template, Response, request
 from flask_cors import CORS
 import socket
 import os.path
-import random
 import db_calls as dbc
 
 def root_dir():  # pragma: no cover
@@ -160,13 +159,15 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
     ticket_data = model.generate_ticket_data(ticket)
     result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data)
 
-    rebuilt_result = {}
-    rebuilt_result.update({"Survival": str(result[0])})
-    rebuilt_result.update({"Probability": str(result[1])})
-    rebuilt_result.update({"TicketNum": str(random.randrange(1000))})
+    survival = result[0]
+    probability = result[1]
     
-    dbc.add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin)
+    ticketNum = dbc.add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin, survival, probability)
 
+    rebuilt_result = {}
+    rebuilt_result.update({"Survival": str(survival)})
+    rebuilt_result.update({"Probability": str(probability)})
+    rebuilt_result.update({"TicketNum": str(ticketNum)})
     return jsonify(rebuilt_result)
 
 if __name__ == '__main__':

@@ -1,7 +1,12 @@
 import psycopg2
+import random
 from config import aws_postgres_server_name, aws_postgres_database, aws_postgres_username, aws_postgres_port, aws_postgres_password
 
-def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin):
+def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin, survival, probability):
+    
+    # init value
+    row_id = random.randrange(1000)
+
     try:
         connection = psycopg2.connect(user=aws_postgres_username,
                                         password=aws_postgres_password,
@@ -9,14 +14,15 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
                                         port=aws_postgres_port,
                                         database=aws_postgres_database)
         cursor = connection.cursor()
-
-        postgres_insert_query = """ INSERT INTO public.titanicpassengers (title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-        record_to_insert = (title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin)
+        survival = int(survival)
+        postgres_insert_query = """ INSERT INTO public.titanicpassengers (title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin, probability, survival) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id"""
+        record_to_insert = (title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin, probability, survival)
         cursor.execute(postgres_insert_query, record_to_insert)
-
         connection.commit()
         count = cursor.rowcount
-        print (count, "Record inserted successfully into mobile table")
+        row_id = cursor.fetchone()[0]
+
+        print (count, row_id, "Record inserted successfully into mobile table")
 
     except (Exception, psycopg2.Error) as error :
         if(connection):
@@ -27,8 +33,8 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
         if(connection):
             cursor.close()
             connection.close()
-
-
+    return row_id
+    
 def get_passengers():
     try:
         connection = psycopg2.connect(user=aws_postgres_username,
@@ -63,5 +69,6 @@ def get_passengers():
 
     return all_rows
 
-add_passenger('Mr', 'John', 'Smith', '3', 'm', '1', '1', '8', '20', 'C', 'Z')
-get_passengers()
+if __name__ == '__main__':
+    add_passenger('Mr', 'John', 'Smith', '3', 'm', '1', '1', '8', '20', 'C', 'Z', 0, 0)
+    get_passengers()
