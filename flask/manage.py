@@ -5,6 +5,7 @@ from flask_cors import CORS
 import socket
 import os.path
 import random
+import db_calls as dbc
 
 def root_dir():  # pragma: no cover
     return os.path.abspath(os.path.dirname(__file__))
@@ -113,7 +114,7 @@ def get_passengers():
         http://localhost:5000/api/get_passengers
     '''
     passenger = {1:("Mr","John","Smith","3","m","1","1","8","20","C","Z"), 2:("Mr","Todd","Rod","3","m","1","1","8","30","C","Z")}
-    return jsonify(passenger)
+    return jsonify(dbc.get_passengers())
 
 
 @app.route('/api/test_prediction')
@@ -164,6 +165,8 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
     rebuilt_result.update({"Probability": str(result[1])})
     rebuilt_result.update({"TicketNum": str(random.randrange(1000))})
     
+    dbc.add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin)
+
     return jsonify(rebuilt_result)
 
 if __name__ == '__main__':
