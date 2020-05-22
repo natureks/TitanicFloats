@@ -26,12 +26,13 @@ Once we have developed our model, our team intends to create a webpage where use
 We are also planning on databasing entries for people who add entries to the site, to see what the survival rate is for hypothetical additional passengers today!
 
 ## API Calls: 
-<h3>Architectural Diagram</h3>
+<h3>Add Passenger</h3>
 <pre>
-	Add Passenger
 		API: https://young-beach-08773.herokuapp.com/api/add_passenger/Mr/John/Smith/3/f/1/1/8/20/C/Z
 		Output: {"Probability":"0.52","Survival":"0","TicketNum":"48"}
-
+</pre>
+<h3>Get List Of Passengers</h3>
+<pre>
 	Get List Of Passengers
 		API: https://young-beach-08773.herokuapp.com/api/get_passengers
 		Output: {"47":[47,"Mr","John","Smith","1","f",1,1,8,20,"C","Z",0.7,1],"48":[48,"Mr","John","Smith","3","f",1,1,8,20,"C","Z",0.52,0]}
