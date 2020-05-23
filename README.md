@@ -36,6 +36,23 @@ Once we have developed our model, our team intends to create a webpage where use
 
 We are also planning on databasing entries for people who add entries to the site, to see what the survival rate is for hypothetical additional passengers today!
 
+
+## Key Programs:
+<h3>ML Notebook</h3>
+<pre>
+	data/titanic1.ipynb
+</pre>
+
+<h3>Flask Application</h3>
+<pre>
+	flask/manage.py
+</pre>
+
+<h3>Website</h3>
+<pre>
+	index.html
+</pre>
+
 ## API Calls
 <h3>Add Passenger</h3>
 <pre>
