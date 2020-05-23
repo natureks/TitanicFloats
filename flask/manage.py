@@ -126,8 +126,6 @@ def get_df():
 
     return tralib.read_df_from_mongo_as_json(key)
 
-<<<<<<< Updated upstream
-=======
 
 @app.route('/api/get_passengers')
 def get_passengers():
@@ -205,6 +203,5 @@ def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, paren
     rebuilt_result.update({"TicketNum": str(ticketNum)})
     return jsonify(rebuilt_result)
 
->>>>>>> Stashed changes
 if __name__ == '__main__':
     app.run(debug=False)
