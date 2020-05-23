@@ -42,16 +42,16 @@ submit_button.addEventListener("click", function(event){
 
     event.preventDefault();
 
-    title = document.getElementById("title").value;
-    first_name = document.getElementById("first_name").value;
-    last_name = document.getElementById("last_name").value;
-    gender = document.getElementById("gender").value;
-    age = document.getElementById("age").value;
-    class_form = document.getElementById("class_form").value;
-    cabin = document.getElementById("cabin").value;
-    sib_sp = document.getElementById("sib_sp").value;
-    par_ch = document.getElementById("par_ch").value;
-    depart_from = document.getElementById("depart_from").value;
+    title = document.getElementById("form-title").value;
+    first_name = document.getElementById("form-first-name").value;
+    last_name = document.getElementById("form-last-name").value;
+    gender = document.getElementById("form-gender").value;
+    age = document.getElementById("form-age").value;
+    class_form = document.getElementById("form-class").value;
+    cabin = document.getElementById("form-cabin").value;
+    sib_sp = document.getElementById("form-sib_sp").value;
+    par_ch = document.getElementById("form-par_ch").value;
+    depart_from = document.getElementById("form-depart-from").value;
 
     console.log("title: " + title);
     console.log("first_name: " + first_name);
@@ -67,6 +67,8 @@ submit_button.addEventListener("click", function(event){
     fare = get_fare_price(class_form, cabin);
 
     document.getElementById("input_fare").innerHTML = fare;
+
+    document.getElementById("fare-section").style.display="block";
 
 });
 
@@ -87,12 +89,45 @@ buy_ticket.addEventListener("click", function(event){
         'cabin' : cabin
     };
 
-    document.getElementById("ticket_full_name").innerHTML = "Name: " + title + " " + first_name + " " + last_name;
-    document.getElementById("ticket_age").innerHTML = "Age: " + age;
-    document.getElementById("ticket_gender").innerHTML = "Gender: " + gender;
-    document.getElementById("ticket_depart_from").innerHTML = "Depart: " + depart_from;
-    document.getElementById("ticket_class").innerHTML = "Class: " + class_form;
-    document.getElementById("ticket_cabin").innerHTML = "Cabin: " + cabin;
-    document.getElementById("ticket_fare").innerHTML = "Fare: " + fare;
+    base_url = "https://young-beach-08773.herokuapp.com/api/add_passenger/"
+    url = base_url + title + "/" + first_name + "/" + 
+        last_name + "/" + class_form + "/" + gender + "/" + 
+        sib_sp + "/" + par_ch + "/" + fare + "/" +
+        age + "/" + depart_from + "/" + cabin;
+
+    console.log(url);
+    
+    d3.json(url).then(function(data) {
+        var probability = data["Probability"];
+        var survive_metric = data["Survival"];
+        var ticket_number = data["TicketNum"];
+
+        console.log(data);
+
+        document.getElementById("ticket-full-name").innerHTML = title + " " + first_name + " " + last_name;
+        document.getElementById("ticket-age").innerHTML = age;
+        document.getElementById("ticket-gender").innerHTML = gender;
+        document.getElementById("sailing-from").innerHTML = depart_from;
+        document.getElementById("ticket-class").innerHTML = class_form;
+        document.getElementById("ticket-cabin").innerHTML = cabin;
+        document.getElementById("ticket-fare").innerHTML = fare;
+        document.getElementById("ticket-sibsp").innerHTML = sib_sp;
+        document.getElementById("ticket-parch").innerHTML = par_ch;
+        document.getElementById("ticket-ticket-number").innerHTML = ticket_number;
+    
+        if (survive_metric === "1") {
+            document.getElementById("survive-metric").innerHTML = "Survive: " + probability;
+        }
+        else {
+            document.getElementById("survive-prob").innerHTML = "Death: " + probability; 
+        }
+
+        
+ 
+    
+    });
+
+    document.getElementById("survive-section").style.display="block";
+    document.getElementById("ticket-final").style.display="block";
 
 });

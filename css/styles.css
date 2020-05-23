@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url('../images/old_paper.jpg');
+    background-color: white;
     height: 200px;
 }
 
@@ -22,10 +22,7 @@
   padding: 20px;
 }
 
-.body {
-  background-image: url('images/teapaper.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
- }
- 
+#ticket-title {
+
+}
 
