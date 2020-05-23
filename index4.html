@@ -47,6 +47,20 @@
         .row {
             margin:10px;
         }
+        #survivalbility {
+            border-radius: 35px;
+            margin: 10px auto;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        }
+        #ticket-final {
+            display: none;
+        }
+        #survive-section {
+            display: none;
+        }
+        #fare-section {
+            display: none;
+        }
 
 
     </style>
@@ -54,7 +68,135 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="questionaire">
+        <h2>Buy a Ticket</h2>
+        <div class="row">
+            <form class="form-horizontal" action="">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-title">Title:</label>
+                        <div class="col-md-8">
+                        <select class="form-control" id="form-title">
+                            <option value="" selected disabled>Please select</option>
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                            <option>Master</option>
+                            <option>Miss</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-first-name">First Name:</label>
+                        <div class="col-md-8">          
+                        <input type="text" class="form-control" id="form-first-name" placeholder="Enter First Name" name="form-first-name">
+                        </div>
+                    </div>
+                    <div class="form-group">        
+                        <label class="control-label col-md-4" for="form-last-name">Last Name:</label>
+                        <div class="col-md-8">          
+                        <input type="text" class="form-control" id="form-last-name" placeholder="Enter Last Name" name="form-last-name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-gender">Gender:</label>
+                        <div class="col-md-8">
+                        <select class="form-control" id="form-gender">
+                            <option value="" selected disabled>Please select</option>
+                            <option>m</option>
+                            <option>f</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">        
+                        <label class="control-label col-md-4" for="form-age">Age:</label>
+                        <div class="col-md-8">          
+                            <input type="number" class="form-control" id="form-age" placeholder="Age" name="form-age">
+                        </div>
+                    </div> 
+                </div> 
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-class">Class:</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="form-class">
+                                <option value="" selected disabled>Please select</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-cabin">Cabin:</label>
+                        <div class="col-md-8">
+                        <select class="form-control" id="form-cabin">
+                            <option value="" selected disabled>Please select</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>No Preference</option>
+                            <option>Z</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">        
+                        <label class="control-label col-md-4" for="form-sib_sp">Siblings/Spouces:</label>
+                        <div class="col-md-8">          
+                            <input type="number" class="form-control" id="form-sib_sp" placeholder="Count" name="form-sib_sp">
+                        </div>
+                    </div>  
+                    <div class="form-group">        
+                        <label class="control-label col-md-4" for="form-par_ch">Parents/Children:</label>
+                        <div class="col-md-8">          
+                            <input type="number" class="form-control" id="form-par_ch" placeholder="Count" name="form-par_ch">
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label class="control-label col-md-4" for="form-depart-from">Depart From:</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="form-depart-from">
+                                <option value="" selected disabled>Please select</option>
+                                <option>C</option>
+                                <option>Q</option>
+                                <option>S</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">        
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
+                        </div>
+                    </div>
+                    <div id="fare-section">
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Fare</div>
+                                    <div class="panel-body" id="input_fare">PRICE</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">        
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-default" id="buy_ticket">Buy Ticket</button>
+                            </div>
+                        </div>
+                        <div class="form-group">        
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-default" id="refresh" onClick="refresh">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="ticket-final">
         <div class="row">
             <div class="col-md-6">
                 <img src="images/titanicleft.png" alt="border" class="img-fluid mx-auto d-block" id="ticket-image">
@@ -133,19 +275,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <span>Sib/Sp:</span>
-                            <span id="ticket-sibsp" class="field-underline">3</span>
-                        </div>
-                        <div class="col-md-6">
-                            <span>Par/Ch:</span>
-                            <span id="ticket-parch" class="field-underline">2</span>
-                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>Sib/Sp:</span>
+                                    <span id="ticket-sibsp" class="field-underline">3</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <span>Par/Ch:</span>
+                                    <span id="ticket-parch" class="field-underline">2</span>
+                                </div>
 
+                            </div>
+                        </div>
                     </div>
 
                     <hr>
-
+                    <div class="row">
+                        <div class="col-md-12">
+                            TICKET INFO:
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="row">
@@ -173,6 +323,34 @@
         </div>
 
     </div>
+    
+    <div id="survive-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 my-auto" id="survivalbility">
+                    <h2>
+                        <span id="survive-metric"></span>
+                        <span id="survive-prob"></span>
+                    </h2>
+                </div>
+                <div class="col-2 col-offset-10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-default" id="add_new_passenger" onClick="refresh">Add New Passenger</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-default" id="view_captains_log">View Captains Log</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
+<script src="js/scripts.js"></script>
 
 </html>
