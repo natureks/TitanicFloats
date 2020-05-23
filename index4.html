@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>The Titanic Floats - Kings of Machine Learning</title>
+    <meta name="description" content="The TitanicFloats - Kings of Machine Learning">
+    <meta name="author" content="SitePoint">
+
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <link rel="shortcut icon" href="images/titanic-logo.jpg" />
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+    <style>
+        hr {
+            border-top: 1px solid black;
+        }
+        .container {
+            border-style: solid;
+            border-width: thick;
+            margin: 10px;
+            padding: 10px;
+        }
+        #ticket-image {
+            height: 80vh;
+            width: auto;
+        }
+        #ticket-form {
+            border-style: solid;
+            height: 100%;
+            padding: 10px;
+        }
+        .field-underline {
+            border-bottom: 1px solid;
+        }
+        .row {
+            margin:10px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="images/titanicleft.png" alt="border" class="img-fluid mx-auto d-block" id="ticket-image">
+            </div>
+            <div class="col-md-6">
+                <div class="col-12" id="ticket-form">
+                    <div class="row" id="ticket-header">
+                        <div class="col-6">
+                            WHITE STAR LINE
+                        </div>
+                        <div class="col-6 text-right">
+                            <span>TICKET #:</span>
+                            <span id="ticket-ticket-number" class="field-underline">123</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>Passenger Ticket per Steamship: R.M.S. </span>
+                            <span id="titanic-title" class="field-underline">Titanic</Span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>SAILING FROM:</span>
+                                    <span id="sailing-from" class="field-underline">Pittsburgh</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>SAILING TO:</span>
+                                    <span id="ticket-travel-to" class="field-underline">New York City</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-auto">
+                            <span>Date:</span>
+                            <span id="depart-date" class="field-underline">01/01/1915</span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>PASSENGER NAME: </span>
+                            <span id="ticket-full-name" class="field-underline">
+                                <span id="ticket-title">Mr.</span>
+                                <span id="ticket-first-name">Ethan</span>
+                                <span id="ticket-last-name">Martin</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span>AGE:</span>
+                                    <span id="ticket-age" class="field-underline">25</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <span>Gender:</span>
+                                    <span id="ticket-gender" class="field-underline">Male</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            ACCOMPANIED BY:
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>Sib/Sp:</span>
+                            <span id="ticket-sibsp" class="field-underline">3</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span>Par/Ch:</span>
+                            <span id="ticket-parch" class="field-underline">2</span>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>Class:</span>
+                                    <span id="ticket-class" class="field-underline">1</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>Cabin:</span>
+                                    <span id="ticket-cabin" class="field-underline">B</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 my-auto">
+                            <span>Fare:</span>
+                            <span id="ticket-fare" class="field-underline">45</span>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
