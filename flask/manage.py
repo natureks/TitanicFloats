@@ -21,6 +21,27 @@ def read_file(filename):  # pragma: no cover
     except IOError as exc:
         return str(exc)
 
+def format_table_data(results):
+    passengers = []
+    for key in results:
+        passenger = {}
+        passenger['ticket'] = results[key][0]
+        passenger['title'] = results[key][1]
+        passenger['first_name'] = results[key][2]
+        passenger['last_name'] = results[key][3]
+        passenger['class'] = results[key][4]
+        passenger['gender'] = results[key][5]
+        passenger['sib_spouse'] = results[key][6]
+        passenger['parents_child'] = results[key][7]
+        passenger['fare'] = results[key][8]
+        passenger['age'] = results[key][9]
+        passenger['port'] = results[key][10]
+        passenger['cabin'] = results[key][11]
+        passenger['prob'] = results[key][12]
+        passenger['survived'] = results[key][13]
+        passengers.append(passenger)
+    return(passengers)
+
 #################################################
 # Flask Setup
 #################################################
@@ -112,8 +133,10 @@ def get_passengers():
     examples:
         http://localhost:5000/api/get_passengers
     '''
-    passenger = {1:("Mr","John","Smith","3","m","1","1","8","20","C","Z"), 2:("Mr","Todd","Rod","3","m","1","1","8","30","C","Z")}
-    return jsonify(dbc.get_passengers())
+
+    passengers = format_table_data(dbc.get_passengers())
+    
+    return jsonify(passengers)
 
 
 @app.route('/api/test_prediction')
