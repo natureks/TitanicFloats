@@ -19,6 +19,28 @@ def read_file(filename):  # pragma: no cover
     except IOError as exc:
         return str(exc)
 
+def format_table_data(results):
+    passengers = []
+    for key in results:
+        passenger = {}
+        passenger['ticket'] = results[key][0]
+        passenger['title'] = results[key][1]
+        passenger['first_name'] = results[key][2]
+        passenger['last_name'] = results[key][3]
+        passenger['class'] = results[key][4]
+        passenger['gender'] = results[key][5]
+        passenger['sib_spouse'] = results[key][6]
+        passenger['parents_child'] = results[key][7]
+        passenger['fare'] = results[key][8]
+        passenger['age'] = results[key][9]
+        passenger['port'] = results[key][10]
+        passenger['cabin'] = results[key][11]
+        passenger['prob'] = results[key][12]
+        passenger['survived'] = results[key][13]
+        passengers.append(passenger)
+    return(passengers)
+
+
 #################################################
 # Flask Setup
 #################################################
@@ -104,5 +126,85 @@ def get_df():
 
     return tralib.read_df_from_mongo_as_json(key)
 
+<<<<<<< Updated upstream
+=======
+
+@app.route('/api/get_passengers')
+def get_passengers():
+    '''
+    examples:
+        http://localhost:5000/api/get_passengers
+    '''
+    # passenger = {1:("Mr","John","Smith","3","m","1","1","8","20","C","Z"), 2:("Mr","Todd","Rod","3","m","1","1","8","30","C","Z")}
+    results = {"47":[47,"Mr","John","Smith","1","f",1,1,8,20,"C","Z",0.7,1],"48":[48,"Mr","John","Smith","3","f",1,1,8,20,"C","Z",0.52,0],"49":[49,"Mr","John","Smith","3","f",1,1,8,20,"C","Z",0.52,0],"50":[50,"Mr","John","Smith","3","f",1,1,8,20,"C","Z",0.52,0],"51":[51,"Mr","John","Smith","3","m",1,1,8,20,"C","Z",0.54,0],"52":[52,"Mr","John","Smith","3","m",1,1,8,20,"C","Z",0.54,0]}
+    
+    passengers = format_table_data(results)
+    # passengers = format_table_data(jsonify(dbc.get_passengers()))
+
+    return jsonify(passengers)
+
+
+
+
+    # return jsonify(dbc.get_passengers())
+    
+
+
+
+@app.route('/api/test_prediction')
+def test_prediction():
+    ticket = {
+        'ticket_class' : 3,
+        'sex' : 'm',
+        'siblings_spouse' : 0, # of siblings / spouses aboard the Titanic
+        'parents_children' : 1, # - int - # of parents / children aboard the Titanic
+        'fare' : 8000, # - int - Passenger fare input in USD range $
+        'age' : 7,
+        'port' : 'S',   # C = Cherbourg, Q = Queenstown, S = Southampton
+        'cabin' : 'Z'
+    }
+    ticket_data = model.generate_ticket_data(ticket)
+    result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data)
+
+    rebuilt_result = {}
+    rebuilt_result.update({"Survival": str(result[0])})
+    rebuilt_result.update({"Probability": str(result[1])})
+    rebuilt_result.update({"TicketNum": str(1)})
+    
+    return jsonify(rebuilt_result)
+
+
+@app.route('/api/add_passenger/<title>/<fname>/<lname>/<ticket_class>/<sex>/<siblings_spouse>/<parents_children>/<fare>/<age>/<port>/<cabin>', methods=['GET', 'POST'])
+def add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin):
+    '''
+        Sample usage: # http://localhost:5000/api/add_passenger/Mr/John/Smith/3/m/1/1/8/20/C/Z
+    '''
+
+    ticket = {
+        'ticket_class' : ticket_class,
+        'sex' : sex,
+        'siblings_spouse' : int(siblings_spouse), # of siblings / spouses aboard the Titanic
+        'parents_children' : int(parents_children), # - int - # of parents / children aboard the Titanic
+        'fare' : int(fare), # - int - Passenger fare input in USD range $
+        'age' : int(age),
+        'port' : port,   # C = Cherbourg, Q = Queenstown, S = Southampton
+        'cabin' : cabin
+    }
+
+    ticket_data = model.generate_ticket_data(ticket)
+    result = model.predict_results(model_file='clf_rfp.model', ticket_data=ticket_data)
+
+    survival = result[0]
+    probability = result[1]
+    
+    ticketNum = dbc.add_passenger(title, fname, lname, ticket_class, sex, siblings_spouse, parents_children, fare, age, port, cabin, survival, probability)
+
+    rebuilt_result = {}
+    rebuilt_result.update({"Survival": str(survival)})
+    rebuilt_result.update({"Probability": str(probability)})
+    rebuilt_result.update({"TicketNum": str(ticketNum)})
+    return jsonify(rebuilt_result)
+
+>>>>>>> Stashed changes
 if __name__ == '__main__':
     app.run(debug=False)
