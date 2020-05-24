@@ -1,3 +1,40 @@
+var form_cabin_select = {
+    "1": ["A", "B", "C", "D","E"],
+    "2": ["TBD"],
+    "3": ["TBD"]
+}
+console.log(form_cabin_select["1"]);
+
+
+function change_cabin() {
+    var class_value = document.getElementById("form-class").value;
+    console.log(class_value);
+    var catOptions = "";
+    if (class_value.length == 0) {
+        document.getElementById("form-cabin").innerHTML = "<option></option>"; 
+    }
+    else if (class_value == 1) {
+        catOptions += '<option value="" selected disabled>Please select</option>';
+        for (categoryId in form_cabin_select[class_value]) {
+            catOptions += "<option>" + form_cabin_select[class_value][categoryId] + "</option>";
+        }
+        catOptions += '<option value="Z">No Preference</option>';
+        document.getElementById("form-cabin").innerHTML = catOptions;
+    }
+    else if (class_value == 2) {
+        for (categoryId in form_cabin_select[class_value]) {
+            catOptions += '<option value="Z" disabled selected>' + form_cabin_select[class_value][categoryId] + "</option>";
+        }
+        document.getElementById("form-cabin").innerHTML = catOptions;
+    }
+    else if (class_value == 3) {
+        for (categoryId in form_cabin_select[class_value]) {
+            catOptions += '<option value="Z" disabled selected>' + form_cabin_select[class_value][categoryId] + "</option>";
+        }
+        document.getElementById("form-cabin").innerHTML = catOptions;
+    }
+}
+
 function get_fare_price(questionaire_class, questionaire_cabin) {
     switch(questionaire_class) {
         case "1":
