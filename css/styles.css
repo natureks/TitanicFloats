@@ -1,4 +1,4 @@
-.jumbotron {
+/* .jumbotron {
     background-color: white;
     height: 200px;
 }
@@ -24,5 +24,91 @@
 
 #ticket-title {
 
+} */
+
+hr {
+  border-top: 1px solid black;
+}
+.container {
+  border-style: solid;
+  border-width: thick;
+  margin: 10px;
+  padding: 10px;
+}
+#ticket-image {
+  height: 80vh;
+  width: auto;
+}
+#ticket-form {
+  border-style: solid;
+  height: 100%;
+  padding: 10px;
+}
+.field-underline {
+  border-bottom: 1px solid;
+}
+.row {
+  margin:10px;
+}
+#survivalbility {
+  border-radius: 35px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+#ticket-final {
+  display: none;
+}
+#survive-section {
+  display: none;
+}
+#fare-section {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#intro {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+option {
+
+  font-family: 'Times New Roman', Times, serif;
+}
+
+label {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.form-control {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+.panel-heading {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.panel-body {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+span {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
