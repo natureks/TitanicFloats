@@ -1,13 +1,31 @@
-.jumbotron {
-    background-color: white;
-    height: 200px;
+hr {
+  border-top: 1px solid black;
 }
 
-.ticket {
-  background-image: url('../images/old_paper.jpg');
-  border-radius: 35px;
-  margin: 10px auto;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+.container {
+  border-style: solid;
+  border-width: thick;
+  margin: 10px;
+  padding: 10px;
+}
+
+#ticket-image {
+  height: 80vh;
+  width: auto;
+}
+
+#ticket-form {
+  border-style: solid;
+  height: 100%;
+  padding: 10px;
+}
+
+.field-underline {
+  border-bottom: 1px solid;
+}
+
+.row {
+  margin:10px;
 }
 
 #survivalbility {
@@ -16,13 +34,18 @@
   box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
 }
 
-#ticket-header li {
-  display: inline-block;
-  font-size: 20px;
-  padding: 20px;
+#ticket-final {
+  display: none;
+  background-image: url('images/teapaper.jpg');
+  width: 100%;
+  height: auto;
+  background-size: cover;
 }
 
-#ticket-title {
-
+#survive-section {
+  display: none;
 }
 
+#fare-section {
+  display: none;
+}

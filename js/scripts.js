@@ -114,6 +114,7 @@ submit_button.addEventListener("click", function(event){
 var buy_ticket = document.getElementById('buy_ticket');
 
 buy_ticket.addEventListener("click", function(event){
+    document.getElementById("questionaire").style.display="none";
 
     event.preventDefault();
 

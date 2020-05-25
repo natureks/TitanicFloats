@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    
 <head>
+
     <meta charset="utf-8">
 
     <title>The Titanic Floats - Kings of Machine Learning</title>
@@ -12,9 +15,7 @@
     <meta name="Author" content="">
     <meta name="Keywords" content="">
     <link rel="shortcut icon" href="images/titanic-logo.jpg" />
-    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,56 +23,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 
-    <style>
-        hr {
-            border-top: 1px solid black;
-        }
-        .container {
-            border-style: solid;
-            border-width: thick;
-            margin: 10px;
-            padding: 10px;
-        }
-        #ticket-image {
-            height: 80vh;
-            width: auto;
-        }
-        #ticket-form {
-            border-style: solid;
-            height: 100%;
-            padding: 10px;
-        }
-        .field-underline {
-            border-bottom: 1px solid;
-        }
-        .row {
-            margin:10px;
-        }
-        #survivalbility {
-            border-radius: 35px;
-            margin: 10px auto;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-        }
-        #ticket-final {
-            display: none;
-            background-image: url('images/teapaper.jpg');
-            width: 100%;
-            height: auto;
-            background-size: cover;
-        }
-        #survive-section {
-            display: none;
-        }
-        #fare-section {
-            display: none;
-        }
-
-
-    </style>
-
 </head>
 
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Titanic Floats</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">Buy Ticket</a></li>
+                <li><a href="captains_log.html">Captains Log</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container" id="questionaire">
         <h2>Buy a Ticket</h2>
         <div class="row">
@@ -192,6 +158,30 @@
         </div>
     </div>
 
+    <div id="survive-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 my-auto" id="survivalbility">
+                    <h2>
+                        <span id="survive-metric"></span>
+                        <span id="survive-prob"></span>
+                    </h2>
+                </div>
+                <div class="col-2 col-offset-10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-default" id="add_new_passenger" onClick="refreshPage()">Add New Passenger</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-default" id="view_captains_log">View Captains Log</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container" id="ticket-final">
         <div class="row">
@@ -319,31 +309,6 @@
             </div>
         </div>
 
-    </div>
-    
-    <div id="survive-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 my-auto" id="survivalbility">
-                    <h2>
-                        <span id="survive-metric"></span>
-                        <span id="survive-prob"></span>
-                    </h2>
-                </div>
-                <div class="col-2 col-offset-10">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-default" id="add_new_passenger" onClick="refreshPage()">Add New Passenger</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-default" id="view_captains_log">View Captains Log</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 </body>
