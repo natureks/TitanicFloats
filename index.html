@@ -24,13 +24,16 @@
 
     <style>
         hr {
-            border-top: 1px solid black;
+            border-top: 1px solid white;
         }
         .container {
-            border-style: solid;
-            border-width: thick;
+            /* border-style: solid;
+            border-width: thick; */
             margin: 10px;
             padding: 10px;
+            height: auto;
+            width: auto;
+            
         }
         #ticket-image {
             height: 80vh;
@@ -47,6 +50,32 @@
         .row {
             margin:10px;
         }
+
+        body {
+            background-image:url('images/01-port-bow-titanic-.jpg');
+            /* background-image:url('images/ice-berg-at-night.jpg'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        li {
+            color: white;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        h2 {
+            color: white;
+            font-size: 50px;
+            
+        }
+
+        p {
+            color: white;
+        }
+
 
 
     </style>
@@ -66,19 +95,21 @@
             </ul>
         </div>
     </nav>
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-6">
                 <h2>Titanic Facts</h2>
                 <p>Some interesting facts we pulled together related to the Titanic dataset from Kaggle.</p>
-                
+                <hr>
                 <h3>Overall Dataset Analysis</h3>
                 <ul>
                     <li>Total Passengers: 891</li>
                     <li>Gender Split: 65% of the people on board were male.</li>
                     <li>Survival Rate: 38% of people on board survived</li>
                     <li>Survival Rate (Gender): 19% of men survived, 74% of women survived.</li>
-                    <li>Room on door: There was, in fact, room on the door for Jack.</li>
+                    <li><b>Room on door: There was, in fact, room on the door for Jack.</b></li>
                 </ul>
                 <h3>Dataset Age Analysis</h3>
                 <ul>
