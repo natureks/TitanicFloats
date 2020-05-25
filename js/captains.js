@@ -15,7 +15,7 @@ fetch(url)
         var row = tbody.append('tr')
         var cell;
         // order the items in the dictionary to match with the html
-        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'class', 'gender', 'sib_spouse', 'parents_child', 'fare', 'age', 'port', 'cabin', 'prob', 'survived'];
+        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'gender', 'age', 'port', 'cabin', 'prob'];
         orderArr.forEach((col) => {
             cell = row.append('td');
             cell.text(sighting[col]);
