@@ -12,13 +12,20 @@ Machine Learning For Titanic Voyage
 
 ## Links
 Url of Github Repo of your Project:
-https://github.com/natureks/TitanicFloats
+	https://github.com/natureks/TitanicFloats
 
-Our website for visualization is:
-http://titanic-floats-the-ml-kings.s3-website-us-east-1.amazonaws.com/
+Website I (AWS S3):
+	http://titanic-floats-the-ml-kings.s3-website-us-east-1.amazonaws.com/
+
+Website II (Github)
+	https://natureks.github.io/TitanicFloats/
 
 Our API Server is:
-https://young-beach-08773.herokuapp.com/
+	https://young-beach-08773.herokuapp.com/
+
+Detailed Presentation:
+	https://docs.google.com/document/d/1s7mY0sicZ6n-Qa2ILyjBlaZWULDR-BqLOlj37mQ_7es/edit
+
 
 ## Overview
 For our project, out team is planning on utilizing data on the passengers of the Titanic. We will use the skills we have learned to help develop a model which predicts the liklihood of survival for passengers based on some of their personal information.
@@ -28,6 +35,23 @@ Our dataset currently includes information such as age, sex, cabin location, and
 Once we have developed our model, our team intends to create a webpage where users can enter their own information and find out what their liklihood of survival would be based on their demographics and the tickets they purchase.
 
 We are also planning on databasing entries for people who add entries to the site, to see what the survival rate is for hypothetical additional passengers today!
+
+
+## Key Programs:
+<h3>ML Notebook</h3>
+<pre>
+	data/titanic1.ipynb
+</pre>
+
+<h3>Flask Application</h3>
+<pre>
+	flask/manage.py
+</pre>
+
+<h3>Website</h3>
+<pre>
+	index.html
+</pre>
 
 ## API Calls
 <h3>Add Passenger</h3>
