@@ -6,7 +6,8 @@ var url = 'https://young-beach-08773.herokuapp.com/api/get_passengers'
 fetch(url)
     .then(res => res.json())//response type
     .then(data => addTable(data)); //log the data;
-    function addTable (tableData) {
+
+function addTable (tableData) {
     // remove all the existing table data if it exists
     d3.selectAll('td').remove()
     // add the rows
@@ -14,8 +15,17 @@ fetch(url)
     tableData.forEach((sighting) => {
         var row = tbody.append('tr')
         var cell;
+
+        if(sighting['survived'] === "1")
+        {
+            sighting['survived'] = "Yes"
+        }
+        else
+        {
+            sighting['survived'] = "No"
+        }
         // order the items in the dictionary to match with the html
-        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'gender', 'age', 'port', 'cabin', 'prob'];
+        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'gender', 'age', 'port', 'cabin', 'survived', 'prob'];
         orderArr.forEach((col) => {
             cell = row.append('td');
             cell.text(sighting[col]);
