@@ -15,7 +15,7 @@
     <meta name="Author" content="">
     <meta name="Keywords" content="">
     <link rel="shortcut icon" href="images/titanic-logo.jpg" />
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -38,6 +38,7 @@
             </ul>
         </div>
     </nav>
+    
     <div class="container" id="questionaire">
         <h2>Buy a Ticket</h2>
         <div class="row">
@@ -158,30 +159,30 @@
         </div>
     </div>
 
-    <div id="survive-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 my-auto" id="survivalbility">
-                    <h2>
-                        <span id="survive-metric"></span>
-                        <span id="survive-prob"></span>
-                    </h2>
-                </div>
-                <div class="col-2 col-offset-10">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-default" id="add_new_passenger" onClick="refreshPage()">Add New Passenger</button>
-                        </div>
+
+    <div class="container" id="survive-section">
+        <div class="row">
+            <div class="col-4 my-auto" id="survivalbility">
+                <h2>
+                    <span id="survive-metric"></span>
+                    <span id="survive-prob"></span>
+                </h2>
+            </div>
+            <div class="col-2 col-offset-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-default" id="add_new_passenger" onClick="refreshPage()">Add New Passenger</button>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-default" id="view_captains_log">View Captains Log</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-default" id="view_captains_log" onclick="window.location.href='captains_log.html';">View Captains Log</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="container" id="ticket-final">
         <div class="row">
