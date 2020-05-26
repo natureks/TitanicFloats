@@ -16,16 +16,16 @@ function addTable (tableData) {
         var row = tbody.append('tr')
         var cell;
 
-        if(sighting['survived'] === "1")
+        if(sighting['survived'] === 1)
         {
-            sighting['survived'] = "Yes"
+            sighting['survived_yesno'] = "Yes"
         }
         else
         {
-            sighting['survived'] = "No"
+            sighting['survived_yesno'] = "No"
         }
         // order the items in the dictionary to match with the html
-        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'gender', 'age', 'port', 'cabin', 'survived', 'prob'];
+        orderArr = ['ticket', 'title', 'first_name', 'last_name', 'gender', 'age', 'port', 'cabin', 'survived_yesno', 'prob'];
         orderArr.forEach((col) => {
             cell = row.append('td');
             cell.text(sighting[col]);
